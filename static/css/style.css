@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Lato:wght@300&display=swap');
+
+body {
+    background-position: 0in;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    background-color:whitesmoke;
+    overflow: scroll;
+    word-wrap: break-word;
+    background: #0c0b09;
+     
+}
+
+a, a:hover, a:focus, a:active {
+    color: slategrey;
+    text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform:none;
+  
+}
+h1 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(0, 0, 0, 0.284);
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.ml6 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml6 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml6 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+/* text */
+.ml16 {
+  color: #402d2d;
+  padding: 40px 0;
+  font-weight: 800;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  overflow: hidden;
+}
+
+.ml16 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+#inlineFrameExample {
+  width: 200px;
+  height: 200px;
+}
+#social-networks {
+ 
+  text-align: right;
+  display: block;
+  height: 50px;
+ 
+}
+#social-networks i {
+    font-size: 160%;
+    
+ padding: 1%;
+    color:antiquewhite;
+    margin-top: 150px;
+   
+}
+.soc i {
+font-size: 50%;
+padding: 1%;
+color:antiquewhite;
+margin-top: 50px;
+
+}
+.soc1  {
+font-size: 160%;
+
+padding: 1%;
+color:antiquewhite;
+margin-top: 150px;
+}
+#social-networks > div {
+       display:grid;
+       color:antiquewhite;
+       text-align: center; 
+}
+
+
+
+
+h2 {
+    color:rgb(121, 101, 77);
+    font-family: Caveat, sans-serif;
+    text-align: center;
+    letter-spacing: 0px;
+    font-size: 30px;
+}
+.logo {
+  margin: 135px;
+  
+}
+.tel {
+  margin-left: 25px;
+}
+.gallery {
+  margin-left: 1200px;
+  font-size: 82px;
+}
+.navbar-brand {
+  float: right;
+
+}
+header {
+  display: absolute;
+}
+
+  
+
+
+  .card-img {
+    background-color:#777;
+  }
+  .card text-bg-dark {
+    color: #3a3a3a;
+  }
+  .card {
+    display: flex;
+  }
+
+.special_offers {
+    display: flex;
+    
+    margin: 23px 23px -250px 23px;
+    justify-content: space-between;
+}
+.special_price {
+    width: 250px;
+    height: 150px;
+    margin-left: 60px;
+    
+}
+
+
+   .flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 150px;
+    margin-left: 60px;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    margin-left: -60px;
+    text-align: right;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #aa4e4e36;
+  }
+  .flip-card-back > h1, h4 {
+    text-align: right;
+    margin-left: -60px;
+    font-size: 15px;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-left: -60px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  
+  
+  .flip-card-back {
+    width: 250px;
+    height: 150px;
+    margin-left: 60px;
+    transform: rotateY(180deg);
+  }
+
+.chef {
+    margin: 100px;
+}
+.foto {
+    width: 400px;
+    height: 300px;
+    border: 2px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    justify-content: space-between;
+    margin: 5px;
+    margin-left: 550px;
+    margin-top: -164px;
+}
+ 
+.story, .about, .chef {
+    width: 400px;
+    height: 300px;
+    
+}
+.place_of_image {
+    
+    margin-left: 35px;
+    margin: -45px;
+    display: initial;
+}
+ #color_blue {
+    margin-top: 100px;
+    background-color:rgba(80, 63, 42, 0.312);
+    width: 980px;
+    margin: 70px;
+}
+#color_green {
+    margin-top: 100px;
+    background-color: silver;
+    width: 1000px;
+    height: 450px;
+    margin: 180px;
+}
+section {
+    height: 340px;
+    margin: 150px;
+}
+.bild {
+    width: 300px;
+    height: 200px;
+    border: 2px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    justify-content: space-between;
+    margin: 5px;
+    margin-left: 550px;
+    margin-top: -265px;
+}
+.about {
+    margin-left: 50px;
+}
+.like {
+    text-align: center;
+    display: inline-flex;
+    width: 1300px;
+    margin: 12px;
+    justify-content: space-between;
+}
+
+.like > li {
+    display: inline;
+    
+}
+
+.like i {
+    font-size: 550%;
+    margin: 0%;
+    padding: 0%;
+    color: silver;
+}
+footer {
+    border-top-left-radius: 50%;
+}
+
+/* reservation */
+
+video {
+    margin-left: 70px;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    height: 100vh;
+    width: 1300px;
+    height: 458px;
+    border-radius: 74px;
+    }
+
+    form {
+      margin: 100px;
+        width: 350px;
+        height: 1500px;
+    }
+    div.elem-group {
+        margin: 30px;
+        width: 300px;
+        height: 60px;
+      }
+      
+      div.elem-group.inlined { 
+        display: inline-block;
+        float: right;
+        margin-left: 20px;
+      }
+      
+      label {
+        display: block;
+        font-family: 'Nanum Gothic';
+        padding-bottom: 10px;
+        font-size: 1.25em;
+      }
+      
+      input, select, textarea {
+        border-radius: 2px;
+        border: 2px solid #777;
+        box-sizing: border-box;
+        font-size: 1.25em;
+        font-family: 'Nanum Gothic';
+        width: 100%;
+        padding: 10px;
+      }
+      
+      div.elem-group.inlined input {
+        width: 95%;
+        display: inline-block;
+      }
+      
+      textarea {
+        height: 250px;
+      }
+      
+      hr {
+        border: 1px dotted #ccc;
+      }
+      
+      button {
+        margin-left: 180px;
+        height: 50px;
+        background-color: orange;
+        border: none;
+        color: white;
+        font-size: 1.25em;
+        font-family: 'Nanum Gothic';
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        border: 2px solid rgb(0, 0, 0);
+    
+      }    
+      .login-box {
+        position: relative;
+        margin: 150px;
+        height: 900px;
+        width: 700px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        background-image: url(https://img.freepik.com/free-photo/beautiful-top-view-table-setting-valentines-white_24972-1463.jpg?w=1380&t=st=1674660370~exp=1674660970~hmac=661d8c92129ff709cdc185cc59c385849ed349bce6326249f47c13c184e32851);
+        background-repeat: no-repeat;
+
+      }
+      .left-box {
+        position: absolute;
+        margin-top: 0;
+        margin-left: 0;
+        box-sizing: border-box;
+        padding: 40px;
+        width: 300px;
+        height: 400px;
+        
+}
+.card-img {
+  width: 600px;
+}

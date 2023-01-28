@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% load static %}
+
+
+{% block content %}
+    <!--Hero 1 Start-->
+    
+ 
+</header>
+    <div class="card text-bg-dark">
+      <img src="https://img.freepik.com/free-photo/lifestyle-portrait-elegant-young-woman-with-dark-wavy-hairstyle-trendy-makeup-fashionable-beige-pullover-coat-sitting-cafe-terrace-drinking-coffee-from-white-cup_197531-24448.jpg?size=626&ext=jpg" class="card-img" alt="...">
+      <div class="card-img-overlay">
+        <div class="logo">
+          <h3>Welcome to</h3>
+          <h3 class="ml6">
+            <span class="text-wrapper">
+              <span class="letters">Le chère</span>
+            </span>
+          </h3>
+        
+        </div>
+        <div class="gallery">
+          <a href="#"> <i class="fa-solid fa-play"></i></a>
+        </div class="tel"> 
+              <p class="card-text">Booking online or call:</p>
+              <p class="card-text">Tel: 12345678</p>
+              <button class="btn btn-signup right" type="button"><a class="text-dark" href="{% url 'booking' %}"> Book a table</a></button>
+              <button class="btn btn-light btn-lg action-button" type="button"><a href="#"> Our menu</a></button>
+              <h2>Made with love</h2>
+             
+              
+      
+    </div>
+    </div>
+  <!--div1-->
+  <!-- special offers-->
+  <h1 class="ml16">Special offers</h1>
+  <section class="special_offers">
+        
+    <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://img.freepik.com/free-photo/croissant-basket-with-cloth-wooden-table-flat-lay_176474-8128.jpg?size=626&ext=jpg"class="special_price" >
+          </div>
+          <div class="flip-card-back">
+            <br>
+            <h4><strong>Croissant</strong></h4> 
+            <p>CHOCOLATE FILED</p> 
+            <p>6.99 $</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://img.freepik.com/free-photo/roasted-pumpkin-carrot-soup-with-cream-seeds-fresh-green-ceramic-bowl-top-view_114579-1660.jpg?size=626&ext=jpg" class="special_price">
+          </div>
+          <div class="flip-card-back">
+            <br>
+            <h4><strong>Shellfish soup</strong></h4> 
+            <p>15.95 $</p> 
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://img.freepik.com/free-photo/dietary-salad-with-tomatoes-feta-lettuce-spinach-pine-nuts_2829-20128.jpg?size=626&ext=jpg" class="special_price">
+          </div>
+          <div class="flip-card-back">
+            <br>
+            <h4><strong> Salade de Chèvre</strong></h4> 
+            <p>12.95 $</p> 
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.pexels.com/photos/239581/pexels-photo-239581.jpeg?auto=compress&cs=tinysrgb&w=600" class="special_price">
+   
+          </div>
+          <div class="flip-card-back">
+            <br>
+            <h4><strong>Macarons</strong></h4> 
+            <p>7.95 $</p> 
+            
+          </div>
+        </div>
+      </div>
+  
+    
+    </section>
+   
+  <!---->
+  <section id ="color_green" class="img-thumbnail">
+    <div class="about">
+      <br>
+        <h1>French restaurants of the 19th century</h1>
+        <p>French restaurants today are usually in one of three categories: the bistro, or brasserie, 
+            a simple, informal, and inexpensive establishment; the medium-priced restaurant; and the more elegant grand restaurant, 
+            where the most intricate dishes are executed and served in luxurious surroundings.</p>
+            <p><a class="btn btn-sm btn-default" href="">Read More</a></p>
+            <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=600"class="bild">     
+    </div>
+</section>
+</section>
+       
+<ul class="like">
+    <li>
+        <i class="fa-solid fa-thumbs-up"></i>
+        <h1>1550</h1>
+        <h3>Satisfed guests</h3>
+    </li>
+    <li>
+        <i class="fa-solid fa-utensils"></i>
+        <h1>125</h1>
+        <h3>Lunches every day</h3>
+    </li>
+    <li>
+        <i class="fa-solid fa-people-group"></i>
+        <h1>35</h1>
+        <h3>Family tables</h3>
+    </li>
+    <li>
+        <i class="fa-solid fa-people-robbery"></i>
+        <h1>18</h1>
+        <h3>Team members</h3>
+    </li>
+</ul>
+
+<section>
+<div class="story">
+    <h1>Our story</h1>
+    <br>
+    <p>Welcome to the restaurant "Le chère"! We offer not only the classic Alsatian tarte flambée, but also other dishes 
+      characteristic of this region of France. We invite you for a culinary journey through flavors, aromas and ingredients.</p>
+        <img src="https://images.pexels.com/photos/4393017/pexels-photo-4393017.jpeg?auto=compress&cs=tinysrgb&w=600"class="foto"> 
+</div>
+</section>
+
+<section class="place_of_image">
+<img src="https://images.pexels.com/photos/299347/pexels-photo-299347.jpeg?auto=compress&cs=tinysrgb&w=600" class="foto">
+
+
+</section>
+
+<section id="color_green" class="img-thumbnail">
+
+<div class="chef">
+  <br>
+    <h1>Our chef</h1>
+    <p>The chef is responsible for the entire kitchen, accepting people for various positions. He arranges the menu card and checks
+         the plates before they go to the waiter. In addition,
+         he is also responsible for all other matters relating to the kitchen, 
+         including interior hygiene and training of apprentices.</p>
+    <h2>Emma Wolter</h2>     
+    <img src="https://img.freepik.com/free-photo/female-chef-carefully-pouring-sauce-dish_23-2148763167.jpg?size=626&ext=jpg" class="bild">
+    
+</div>
+</section>
+{% endblock %}
