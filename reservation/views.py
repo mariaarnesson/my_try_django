@@ -8,32 +8,32 @@ def home(request):
     return render(request, "home.html", {})
 
 
-def booking(request):
+def booktable(request):
     weekdays = validWeekday(22)
 
     # Only show the days that are not full:
     validateWeekdays = isWeekdayValid(weekdays)
     
     if request.method == 'POST':
-        service = request.POST.get('service')
+        service = request.POST.get('select a table')
         day = request.POST.get('day')
         if service == None:
             messages.success(request, "Please select a table!")
-            return redirect('booking')
+            return redirect('booktable')
 
         # Store day and service in django session:
         request.session['day'] = day
-        request.session['service'] = service
+        request.session['tableSelection'] = tableSelection
 
-        return redirect('bookingSubmit')
+        return redirect('booktime')
 
-    return render(request, 'booking.html', {
+    return render(request, 'booktable.html', {
             'weekdays': weekdays,
             'validateWeekdays': validateWeekdays,
         })
 
 
-def bookingSubmit(request):
+def booktime(request):
     user = request.user
     times = [
         "6 PM", "6:30 PM", "7 PM", "7:30 PM", "8 PM", "8:30 PM", "9 PM", "9:30 PM", "10 PM", "10:30 PM"
@@ -48,7 +48,7 @@ def bookingSubmit(request):
 
     # Get stored data from django session:
     day = request.session.get('day')
-    service = request.session.get('service')
+    tableSelection = request.session.get('tableSelection')
     
     # Only show the time of the day that has not been selected before:
     hour = checkTime(times, day)
@@ -80,7 +80,7 @@ def bookingSubmit(request):
         else:
             messages.success(request, "Please select a table!")
 
-    return render(request, 'bookingSubmit.html', {
+    return render(request, 'booktime.html', {
         'times': hour,
     })
 
@@ -110,14 +110,14 @@ def userUpdate(request, id):
     validateWeekdays = isWeekdayValid(weekdays)
     
     if request.method == 'POST':
-        service = request.POST.get('service')
+        service = request.POST.get('tableSelection')
         day = request.POST.get('day')
 
         # Store day and service in django session:
         request.session['day'] = day
-        request.session['service'] = service
+        request.session['editbooking'] = tableSelection
 
-        return redirect('userUpdateSubmit', id=id)
+        return redirect('editbooking', id=id)
 
     return render(request, 'userUpdate.html', {
             'weekdays':weekdays,
@@ -176,7 +176,7 @@ def userUpdateSubmit(request, id):
             messages.success(request, "Please select a table!")
         return redirect('userPanel')
 
-    return render(request, 'userUpdateSubmit.html', {
+    return render(request, 'editbooking.html', {
         'times': hour,
         'id': id,
     })
@@ -191,7 +191,7 @@ def staffPanel(request):
     # Only show the free table 21 days from today
     items = Table.objects.filter(day__range=[minDate, maxDate]).order_by('day', 'time')
 
-    return render(request, 'staffPanel.html', {
+    return render(request, 'mybookings.html', {
         'items': items,
     })
 

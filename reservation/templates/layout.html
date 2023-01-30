@@ -43,7 +43,7 @@
                           <a class="nav-link active cHover" href="#">Contact Us</a>
                       </li>     
                       <li class="nav-item">
-                          <a class="nav-link active cHover" href="{% url 'booking' %}">Online Booking</a>
+                          <a class="nav-link active cHover" href="{% url 'booktable' %}">Online Booking</a>
                       </li>                   
                       {% if user.is_authenticated %}
                       <!--Clinic Staff Link-->
@@ -105,7 +105,7 @@
                           <a href="tel: 12345678" class=""><span class="cBlue">Tel: 12345678</span></a>
                       </p>
                       <p>
-                          <a class="uLine cHover" href="{% url 'booking' %}" >Online Booking</a>
+                          <a class="uLine cHover" href="{% url 'booktable' %}" >Online Booking</a>
                       </p>
                   </div>
                   <!-- Grid column -->
@@ -123,7 +123,7 @@
                           <a href="#!" class="uLine">Menu</a>
                       </p>
                       <p>
-                          <a href="{% url 'booking' %}" class="uLine">Reservation</a>
+                          <a href="{% url 'booktable' %}" class="uLine">Reservation</a>
                       </p>
                       <p>
                           <a href="#!" class="uLine">Contact</a>

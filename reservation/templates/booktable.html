@@ -12,7 +12,7 @@
 {% if user.is_authenticated %}
 <h1 class="text-center  mt-3">Online Booking</h1>
 
-<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 login-box">
+<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 login-booking">
     <form method="post" action="{% url 'booking' %}" class="me-2 ms-2" required>
         {% csrf_token %}
 
