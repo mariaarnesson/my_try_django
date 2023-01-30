@@ -360,11 +360,11 @@ video {
       }    
       .login-box {
         position: relative;
-        margin: 150px;
-        height: 900px;
+        margin: 450px;
+        height: 500px;
         width: 700px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-        background-image: url(https://img.freepik.com/free-photo/beautiful-top-view-table-setting-valentines-white_24972-1463.jpg?w=1380&t=st=1674660370~exp=1674660970~hmac=661d8c92129ff709cdc185cc59c385849ed349bce6326249f47c13c184e32851);
+        background-image: url(https://img.freepik.com/free-psd/luxury-rental-print-template_23-2149075059.jpg?w=826&t=st=1675088286~exp=1675088886~hmac=cb970ed47be272d182c1ab312d5b8d9e44ad1d19476f8e6f8755429c78a4c670);
         background-repeat: no-repeat;
 
       }

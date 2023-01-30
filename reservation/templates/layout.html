@@ -22,13 +22,14 @@
 
     {% block head %}
     {% endblock %}
+
 </head>
 <body>
   <header>
       <nav class="navbar bg-white navbar-white navbar-expand-lg shadow-sm">
           <div class="container-fluid">
-              <a class="navbar-brand  cHover cGreen fs-2" href="{% url 'home' %}">
-                
+              <a class="navbar-brand  cHover cGreen fs-2" href="#">
+                  Restaurant 
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -39,7 +40,7 @@
                           <a class="nav-link active cHover" aria-current="page" href="{% url 'home' %}">Home</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link active cHover" href="#contact">Contact Us</a>
+                          <a class="nav-link active cHover" href="#">Contact Us</a>
                       </li>     
                       <li class="nav-item">
                           <a class="nav-link active cHover" href="{% url 'booking' %}">Online Booking</a>
@@ -47,14 +48,14 @@
                       {% if user.is_authenticated %}
                       <!--Clinic Staff Link-->
                       <li class="nav-item">
-                          <a class="nav-link active cHover" href="{% url 'staffPanel' %}">Staff Panel</a>
+                          <a class="nav-link active cHover" href="#">My booknings</a>
                       </li> 
                       <li class="nav-item dropdown me-3 fs-5">
                           <a class="nav-link active dropdown-toggle cHover" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             User
                           </a>
                           <ul class="dropdown-menu  border zNav">
-                            <li><a class="dropdown-item" href="{% url 'userPanel' %}">User Panel</a></li>
+                            <li><a class="dropdown-item" href="#">User Panel</a></li>
                             <li><hr class=""></li>
                             <li><a class="dropdown-item" href="{% url 'logout' %}">Sign Out</a></li>
                           </ul>
@@ -97,7 +98,8 @@
                   <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                       <!-- Links -->
                       <h5 class="text-uppercase fw-bold mb-4 textGradient" id="contact">
-                          Contact Us
+                          Making delicious food since 1989.
+
                       </h5>
                       <p>
                           <a href="tel: 12345678" class=""><span class="cBlue">Tel: 12345678</span></a>
@@ -111,20 +113,20 @@
                   <!-- Service links Regular -->
                   <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                       <!-- Links -->
-                      <h5 class="text-uppercase fw-bold mb-4 textGradient">
-                          Services
-                      </h5>
+                      <h2 class="text-uppercase fw-bold mb-4 textGradient">
+                          Le chère
+                      </h2>
                       <p>
-                          <a href="#!" class="uLine">Doctor care</a>
+                          <a href="{% url 'home' %}" class="uLine">Home</a>
                       </p>
                       <p>
-                          <a href="#!" class="uLine">Nursing care</a>
+                          <a href="#!" class="uLine">Menu</a>
                       </p>
                       <p>
-                          <a href="#!" class="uLine">Medical social services</a>
+                          <a href="{% url 'booking' %}" class="uLine">Reservation</a>
                       </p>
                       <p>
-                          <a href="#!" class="uLine">Homemaker or basic assistance care</a>
+                          <a href="#!" class="uLine">Contact</a>
                       </p>
                   </div>
                   <!-- Service links Regular -->

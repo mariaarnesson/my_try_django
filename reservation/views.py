@@ -38,6 +38,8 @@ def bookingSubmit(request):
     times = [
         "6 PM", "6:30 PM", "7 PM", "7:30 PM", "8 PM", "8:30 PM", "9 PM", "9:30 PM", "10 PM", "10:30 PM"
     ]
+    guest = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"
+    ]
     today = datetime.now()
     minDate = today.strftime('%Y-%m-%d')
     deltatime = today + timedelta(days=21)
@@ -129,6 +131,8 @@ def userUpdateSubmit(request, id):
     user = request.user
     times = [
         "6 PM", "6:30 PM", "7 PM", "7:30 PM", "8 PM", "8:30 PM", "9 PM", "9:30 PM", "10 PM", "10:30 PM"
+    ]
+    guest = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"
     ]
     today = datetime.now()
     minDate = today.strftime('%Y-%m-%d')

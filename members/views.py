@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegisterUserForm
@@ -10,7 +10,7 @@ def login_user(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        
         if user is not None:
             login(request, user)
             # Redirect to a success page.
@@ -21,7 +21,7 @@ def login_user(request):
             messages.success(request, "There Was An Error!")
             return redirect('login')
     else:
-        return render(request, 'authenticate/login.html', {})
+        return render(request, 'login.html', {})
 
 
 def logout_user(request):
@@ -43,6 +43,6 @@ def register_user(request):
             return redirect('home')
     else:
         form = RegisterUserForm()
-    return render(request, 'authenticate/register_user.html', {
+    return render(request, 'register_user.html', {
         'form':form,
     })
