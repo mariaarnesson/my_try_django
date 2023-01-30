@@ -1,47 +1,36 @@
 from django.db import models
+from datetime import datetime
 from django.contrib.auth.models import User
-from cloudinary.models import CloudinaryField
 
 
-STATUS = ((0, "Draft"), (1, "Published"))
-
-
-class Post(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
+SERVICE_CHOICES = (
+    ("Family table", "Family table"),
+    ("Outdoor seating", "Outdoor seating"),
+    ("Table for two", "Table for two"),
+    ("Table on second floor (sea view)", "Table on second floor (sea view)")
     )
-    featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(
-        User, related_name='blogpost_like', blank=True)
 
-    class Meta:
-        ordering = ["-created_on"]
-
-    def __str__(self):
-        return self.title
-
-    def number_of_likes(self):
-        return self.likes.count()
+    
+TIME_CHOICES = (
+    ("6 PM", "6 PM"),
+    ("6:30 PM", "6:30 PM"),
+    ("7 PM", "7 PM"),
+    ("7:30 PM", "7:30 PM"),
+    ("8 PM", "8 PM"),
+    ("8:30 PM", "8:30 PM"),
+    ("9 PM", "9 PM"),
+    ("9:30 PM", "9:30 PM"),
+    ("10 PM", "10 PM"),
+    ("10:30 PM", "10:30 PM"),
+)
 
 
-class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,
-                             related_name="comments")
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
-    body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ["created_on"]
+class Table(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    service = models.CharField(max_length=50, choices=SERVICE_CHOICES, default="Family table")
+    day = models.DateField(default=datetime.now)
+    time = models.CharField(max_length=10, choices=TIME_CHOICES, default="6 PM")
+    time_ordered = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return f"Comment {self.body} by {self.name}"
+        return f"{self.user.username} | day: {self.day} | time: {self.time}"
