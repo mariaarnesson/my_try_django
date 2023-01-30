@@ -1,11 +1,7 @@
 from django.shortcuts import render, redirect
 from datetime import datetime, timedelta
-from .models import Table
+from .models import *
 from django.contrib import messages
-from django.views import View
-from django.http import HttpResponseRedirect
-from django.contrib import messages
-from django.contrib.auth.models import User
 
 
 def home(request):
@@ -70,7 +66,7 @@ def bookingSubmit(request):
                                 time = time,
                             )
                             messages.success(request, "Reservation saved!")
-                            return redirect('index')
+                            return redirect('home')
                         else:
                             messages.success(request, "The selected time has been reserved before!")
                     else:
@@ -163,7 +159,7 @@ def userUpdateSubmit(request, id):
                                 time = time,
                             ) 
                             messages.success(request, "Table edited!")
-                            return redirect('index')
+                            return redirect('home')
                         else:
                             messages.success(request, "The selected time has been reserved before!")
                     else:
