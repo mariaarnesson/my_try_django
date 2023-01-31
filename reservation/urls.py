@@ -8,5 +8,5 @@ urlpatterns = [
     path('user-panel', views.userPanel, name='userPanel'),
     path('user-update/<int:id>', views.userUpdate, name='userUpdate'),
     path('editbooking/<int:id>', views.editbooking, name='editbooking'),
-    path('mybookings', views.mybooknings, name='mybookings'),
+    path('mybookings', views.mybookings, name='mybookings'),
 ]

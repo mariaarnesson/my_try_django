@@ -1,4 +1,4 @@
-<title>Online Booking</title>
+<title>Book Table</title>
 {% extends 'layout.html' %}
 {% load static %}
 
@@ -13,12 +13,12 @@
 <h1 class="text-center  mt-3">Online Booking</h1>
 
 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 login-booking">
-    <form method="post" action="{% url 'booking' %}" class="me-2 ms-2" required>
+    <form method="post" action="{% url 'booktime' %}" class="me-2 ms-2" required>
         {% csrf_token %}
 
         <!--input service-->
         <div>
-            <h3 class="">Select Service:</h3>
+            <h3 class="">Select Table:</h3>
             <select class="form-select fs-3" name="service">
                 <option value="Family table">Family table</option>
                 <option value="Outdoor seating">Outdoor seating</option>

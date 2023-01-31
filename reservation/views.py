@@ -56,14 +56,14 @@ def booktime(request):
         time = request.POST.get("time")
         date = dayToWeekday(day)
 
-        if service != None:
+        if tableSelection != None:
             if day <= maxDate and day >= minDate:
                 if date == 'Monday' or date == 'Saturday' or date == 'Wednesday':
                     if Table.objects.filter(day=day).count() < 11:
                         if Table.objects.filter(day=day, time=time).count() < 1:
                             TableForm = Table.objects.get_or_create(
                                 user = user,
-                                service = service,
+                                tableSelection = tableSelection,
                                 day = day,
                                 time = time,
                             )
@@ -127,7 +127,7 @@ def userUpdate(request, id):
         })
 
 
-def userUpdateSubmit(request, id):
+def editbooking(request, id):
     user = request.user
     times = [
         "6 PM", "6:30 PM", "7 PM", "7:30 PM", "8 PM", "8:30 PM", "9 PM", "9:30 PM", "10 PM", "10:30 PM"
@@ -141,7 +141,7 @@ def userUpdateSubmit(request, id):
     maxDate = strdeltatime
 
     day = request.session.get('day')
-    service = request.session.get('service')
+    tableSelection = request.session.get('tableSelection')
     
     # Only show the time of the day that has not been selected before and the time he is editing:
     hour = checkEditTime(times, day, id)
@@ -151,14 +151,14 @@ def userUpdateSubmit(request, id):
         time = request.POST.get("time")
         date = dayToWeekday(day)
 
-        if service != None:
+        if tableSelection != None:
             if day <= maxDate and day >= minDate:
                 if date == 'Monday' or date == 'Saturday' or date == 'Wednesday':
                     if Table.objects.filter(day=day).count() < 11:
                         if Table.objects.filter(day=day, time=time).count() < 1 or userSelectedTime == time:
                             TableForm = Table.objects.filter(pk=id).update(
                                 user = user,
-                                service = service,
+                                tableSelection = tableSelection,
                                 day = day,
                                 time = time,
                             ) 
@@ -182,7 +182,7 @@ def userUpdateSubmit(request, id):
     })
 
 
-def staffPanel(request):
+def mybookings(request):
     today = datetime.today()
     minDate = today.strftime('%Y-%m-%d')
     deltatime = today + timedelta(days=21)
