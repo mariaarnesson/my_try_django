@@ -23,9 +23,9 @@ def booktable(request):
 
         # Store day and service in django session:
         request.session['day'] = day
-        request.session['tableSelection'] = tableSelection
+        request.session['service'] = service
 
-        return redirect('booktime')
+        return redirect('go')
 
     return render(request, 'booktable.html', {
             'weekdays': weekdays,
@@ -33,7 +33,7 @@ def booktable(request):
         })
 
 
-def booktime(request):
+def go(request):
     user = request.user
     times = [
         "6 PM", "6:30 PM", "7 PM", "7:30 PM", "8 PM", "8:30 PM", "9 PM", "9:30 PM", "10 PM", "10:30 PM"
@@ -48,7 +48,7 @@ def booktime(request):
 
     # Get stored data from django session:
     day = request.session.get('day')
-    tableSelection = request.session.get('tableSelection')
+    service = request.session.get('service')
     
     # Only show the time of the day that has not been selected before:
     hour = checkTime(times, day)
@@ -56,17 +56,17 @@ def booktime(request):
         time = request.POST.get("time")
         date = dayToWeekday(day)
 
-        if tableSelection != None:
+        if service != None:
             if day <= maxDate and day >= minDate:
                 if date == 'Monday' or date == 'Saturday' or date == 'Wednesday':
                     if Table.objects.filter(day=day).count() < 11:
                         if Table.objects.filter(day=day, time=time).count() < 1:
                             TableForm = Table.objects.get_or_create(
-                                user = user,
-                                tableSelection = tableSelection,
-                                day = day,
-                                time = time,
-                            )
+                                                                user = user,
+                                                                service = service,
+                                                                day = day,
+                                                                time = time,
+                                                                )
                             messages.success(request, "Reservation saved!")
                             return redirect('home')
                         else:
@@ -80,7 +80,7 @@ def booktime(request):
         else:
             messages.success(request, "Please select a table!")
 
-    return render(request, 'booktime.html', {
+    return render(request, 'go.html', {
         'times': hour,
     })
 
@@ -110,12 +110,12 @@ def userUpdate(request, id):
     validateWeekdays = isWeekdayValid(weekdays)
     
     if request.method == 'POST':
-        service = request.POST.get('tableSelection')
+        service = request.POST.get('service')
         day = request.POST.get('day')
 
         # Store day and service in django session:
         request.session['day'] = day
-        request.session['editbooking'] = tableSelection
+        request.session['editbooking'] = service
 
         return redirect('editbooking', id=id)
 
@@ -141,7 +141,7 @@ def editbooking(request, id):
     maxDate = strdeltatime
 
     day = request.session.get('day')
-    tableSelection = request.session.get('tableSelection')
+    service = request.session.get('service')
     
     # Only show the time of the day that has not been selected before and the time he is editing:
     hour = checkEditTime(times, day, id)
@@ -151,14 +151,14 @@ def editbooking(request, id):
         time = request.POST.get("time")
         date = dayToWeekday(day)
 
-        if tableSelection != None:
+        if service != None:
             if day <= maxDate and day >= minDate:
                 if date == 'Monday' or date == 'Saturday' or date == 'Wednesday':
                     if Table.objects.filter(day=day).count() < 11:
                         if Table.objects.filter(day=day, time=time).count() < 1 or userSelectedTime == time:
                             TableForm = Table.objects.filter(pk=id).update(
                                 user = user,
-                                tableSelection = tableSelection,
+                                service = service,
                                 day = day,
                                 time = time,
                             ) 

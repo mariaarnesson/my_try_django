@@ -13,12 +13,12 @@
 <h1 class="text-center  mt-3">Online Booking</h1>
 
 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 login-booking">
-    <form method="post" action="{% url 'booktime' %}" class="me-2 ms-2" required>
+    <form method="post" action="{% url 'booktable' %}" class="me-2 ms-2" required>
         {% csrf_token %}
 
         <!--input service-->
         <div>
-            <h3 class="">Select Table:</h3>
+            <h3 class="">Select Service:</h3>
             <select class="form-select fs-3" name="service">
                 <option value="Family table">Family table</option>
                 <option value="Outdoor seating">Outdoor seating</option>
@@ -33,6 +33,14 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
             </select>
         </div>
             <!--input day-->
