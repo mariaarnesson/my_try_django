@@ -1,5 +1,5 @@
-<title>Edit Appointment</title>
-{% extends 'layout.html' %}
+<title>Edit Reservation</title>
+{% extends 'base.html' %}
 {% load static %}
 {% block body %}
 
@@ -44,7 +44,7 @@
 {% else %}
 
 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black m-5 text-center fPersian">
-    <h1 class="text-danger">Editing Appointments Its Only Available 24hrs Before Appointment!</h1>
+    <h1 class="text-danger">Editing Its Only Available 24hrs Before Reservation's Time!</h1>
     <a href="{% url 'userPanel' %}" class="btn btn-primary mt-5">Return To User Panel</a>
 </div>
 

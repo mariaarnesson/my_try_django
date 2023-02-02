@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block head %}
@@ -27,7 +27,7 @@
       </div class="tel"> 
             <p class="card-text">Booking online or call:</p>
             <p class="card-text">Tel: 12345678</p>
-            <a type="button" class="btn btn-primary shadow  mt-5" href="{% url 'booktable' %}">Online Booking</a>
+            <a type="button" class="btn btn-primary shadow  mt-5" href="{% url 'make_reservation' %}">Online Booking</a>
             <a type="button" class="btn btn-primary shadow  mt-5" href="#">Our Menu</a>
             
             <h2>Made with love</h2>
@@ -161,7 +161,7 @@
   <h1>Our chef</h1>
   <p>The chef is responsible for the entire kitchen, accepting people for various positions. He arranges the menu card and checks
        the plates before they go to the waiter. In addition,
-       he is also responsible for all other matters relating to the kitchen, 
+       she is also responsible for all other matters relating to the kitchen, 
        including interior hygiene and training of apprentices.</p>
   <h2>Emma Wolter</h2>     
   <img src="https://img.freepik.com/free-photo/female-chef-carefully-pouring-sauce-dish_23-2148763167.jpg?size=626&ext=jpg" class="bild">

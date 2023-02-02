@@ -1,12 +1,8 @@
 from django.urls import path 
 from . import views
+from .views import AddReservationView
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('booktable', views.booktable, name='booktable'),
-    path('go', views.go, name='go'),
-    path('user-panel', views.userPanel, name='userPanel'),
-    path('user-update/<int:id>', views.userUpdate, name='userUpdate'),
-    path('editbooking/<int:id>', views.editbooking, name='editbooking'),
-    path('mybookings', views.mybookings, name='mybookings'),
+    # path('', views.home, name='home'),
+    path('', AddReservationView.as_view(), name='add'),
 ]

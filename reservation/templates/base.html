@@ -7,9 +7,19 @@
 
     <!-- CSS only -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous" defer></script>
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+     <!-- JavaScript Bundle with Popper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous" defer></script>
+     <!--Jquery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+     <!-- JavaScript Bundle with Popper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous" defer></script>
+     
 
 
     {% block head %}
@@ -34,7 +44,7 @@
                             <a class="nav-link active cHover" href="#">Contact Us</a>
                         </li>     
                         <li class="nav-item">
-                            <a class="nav-link active cHover" href="{% url 'booktable' %}">Online Booking</a>
+                            <a class="nav-link active cHover" href="#">Online Booking</a>
                         </li>                   
                         {% if user.is_authenticated %}
                         <!--Clinic Staff Link-->
@@ -48,7 +58,7 @@
                             <ul class="dropdown-menu  border zNav">
                               <li><a class="dropdown-item" href="#">User Panel</a></li>
                               <li><hr class=""></li>
-                              <li><a class="dropdown-item" href="{% url 'logout' %}">Sign Out</a></li>
+                              <li><a class="dropdown-item" href="#">Sign Out</a></li>
                             </ul>
                         </li>
                         {% else %}
@@ -96,7 +106,7 @@
                             <a href="tel: 12345678" class=""><span class="cBlue">Tel: 12345678</span></a>
                         </p>
                         <p>
-                            <a class="uLine cHover" href="{% url 'booktable' %}" >Online Booking</a>
+                            <a class="uLine cHover" href="#" >Online Booking</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -114,7 +124,7 @@
                             <a href="#!" class="uLine">Menu</a>
                         </p>
                         <p>
-                            <a href="{% url 'booktable' %}" class="uLine">Reservation</a>
+                            <a href="#" class="uLine">Reservation</a>
                         </p>
                         <p>
                             <a href="#!" class="uLine">Contact</a>
@@ -127,5 +137,8 @@
               </section>
         </div>
     </footer>
+    <!-- font-awesome script-->
+<script src="https://kit.fontawesome.com/142db3e41a.js" crossorigin="anonymous"></script>
+<script src="{% static 'js/script.js' %}"></script>></script>
   </body>
 </html>
