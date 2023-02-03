@@ -12,7 +12,7 @@ class AddReservationView(SuccessMessageMixin, CreateView):
 
     model = Reservation
     form_class = ReservationForm
-    template_name = 'add.html'
+    template_name = 'reservation_create_form.html'
     success_url = '/reservation/'
     success_message = 'Reservation created!'
 
@@ -39,4 +39,38 @@ class AddReservationView(SuccessMessageMixin, CreateView):
             self.object = form.save()
             return super().form_valid(form)
 
+    # Display a list of all reservations
 
+    
+class ReservationListView(ListView):
+
+    model = Reservation
+    template_name = 'reservation_list.html'
+
+    # Get object data and return it
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.user.is_superuser:
+            context['current'] = Reservation.objects.all()
+        else:
+            context['current'] = Reservation.objects.filter(
+                user=self.request.user
+                )
+        return context
+
+
+# Update selected reservation
+class ReservationUpdateView(SuccessMessageMixin, UpdateView):
+
+    model = Reservation
+    form_class = ReservationForm
+    template_name = 'reservation_update_form.html'
+    success_url = '/reservation/list/'
+    success_message = 'Reservation updated!'
+
+
+# Delete selected reservation
+class ReservationDeleteView(SuccessMessageMixin, DeleteView):
+
+    model = Reservation
+    success_url = reverse_lazy('reservation_list')

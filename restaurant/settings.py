@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'reservation',
     'members',
-     'crispy_forms',
+    'crispy_forms',
     
 ]
 
