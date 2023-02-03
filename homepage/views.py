@@ -19,7 +19,7 @@ def contact(request):
             ['maria_arnesson@outlook.com'],
             )
 
-        return render(request, "contact.html", {'message_name': message_name})  
+        return render(request, "contact.html", {'message_name': message_name})
 
     else:
         return render(request, "contact.html", {})    
