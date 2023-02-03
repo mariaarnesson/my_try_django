@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<!-- Confirm deletion page  -->
+<div class="container-fluid text-center">
+    <div class="row m-4">
+        <div class="col-12">
+            <h1>Confirm Deletion:</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row text-center">
+        <form method="post">{% csrf_token %}
+            <p>Are you sure you want to delete the reservation for "{{ object.name }}"?</p>
+                <button type="submit" class="btn btn-danger">Confirm</button>
+                <!-- cancel deletion and redirect to reservations list  -->
+                <a href="{% url 'reservation_list' %}" class="btn btn-primary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

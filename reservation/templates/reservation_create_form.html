@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<!-- Form for creating a reservation  -->
+<section class="container-fluid">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <h1 class="m-4 text-center"> Request a Booking </h1>
+      <div class="col-6">
+        <form method="POST" class="reservation-form ">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <br>
+          <button type="submit" value="Post" class="btn btn-primary mb-4">Request Reservation</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

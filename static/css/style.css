@@ -308,7 +308,7 @@ video {
       
       div.elem-group.inlined { 
         display: inline-block;
-        float: right;
+        float: right; 
         margin-left: 20px;
       }
       
@@ -371,7 +371,7 @@ video {
       .login-booking {
         position: relative;
         margin: 450px;
-        height: 700px;
+        height: 1000px;
         width: 1020px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
         background-image: url(https://img.freepik.com/free-vector/time-management-concept_52683-63895.jpg?w=1060&t=st=1675088718~exp=1675089318~hmac=82479888e7e14766bdb4300fbdc2a5655f6fb2de25d7de5a7260e9b2932fb67e);

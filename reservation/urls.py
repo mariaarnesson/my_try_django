@@ -1,8 +1,8 @@
-from django.urls import path 
+from django.urls import path
 from . import views
-from .views import AddReservationView
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-    # path('', views.home, name='home'),
-    path('', AddReservationView.as_view(), name='add'),
+    path('',login_required(views.AddReservationView.as_view()),name='reservation'),
+   
 ]

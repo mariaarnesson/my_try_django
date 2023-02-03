@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<!-- Edit reservation form -->
+<div class="container-fluid text-center res-form">
+    <div class="row m-4">
+        <div class="col-12">
+            <h1>Edit Reservation:</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center form-group">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <br>
+                <button type="submit" value="Post" class="btn btn-primary mb-4">Update Reservation</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

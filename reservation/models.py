@@ -1,6 +1,10 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from datetime import datetime
+from django.db.models import IntegerField
+from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
+
 
 GUEST_CHOICES = (
         ('1', '1'),
@@ -39,10 +43,28 @@ TIME_CHOICES = (
 
 
 class Reservation(models.Model):
+    seats = models.IntegerField(
+        null=False,
+        blank=False,
+        default=1,
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(5)
+            ]
+    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50, unique=True)
     email = models.EmailField(max_length=70, blank=True, unique=True)
     date = models.DateField(default=datetime.now)
-    time = models.CharField(max_length=10, choices=TIME_CHOICES, default="6 PM")
     no_of_guest = models.CharField(
         max_length=2, choices=GUEST_CHOICES, verbose_name="no of guest")
     table = models.CharField(max_length=50, choices=TABLE_CHOICES, default="Family table")    
+    date_booked = models.DateTimeField(auto_now_add=True, null=True)
+    time = models.CharField(max_length=10, choices=TIME_CHOICES, default="6 PM")
+
+
+class TablesModel(models.Model):
+    time = models.CharField(max_length=10, choices=TIME_CHOICES, default="6 PM")
+
+    def __str__(self):
+        return f"{self.user.username} | day: {self.day} | time: {self.time}"

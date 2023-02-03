@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Show a list of reservation details -->
+<section class="container-fluid text-center res-details">
+  <div class="row">
+    <div class="col-12">
+      <h1>My Reservations</h1>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex justify-content-center flex-wrap">
+      {% if current %}
+      {% for res in current %}
+      <!-- for each reservation in list of users confirmed reservations print this card with the users details -->
+      <div class="card m-2 col-m-2 bg-dark" style="width: 12em;">
+        <div class="card-body">
+
+          <p class="card-text">username: {{ res.user }}</p>
+          <p class="card-text">name: {{ res.name }}</p>
+          <p class="card-text">seats: {{ res.seats }}</p>
+          <p class="card-text">date: {{ res.date }}</p>
+          <p class="card-text">time: {{ res.time }}</p>
+          <!-- select and edit reservation via use of primary key -->
+          <a href="/reservation/update/{{ res.pk }}" class="btn btn-primary">update</a>
+          <!-- select and delete reservation via use of primary key -->
+          <a href="{% url 'reservation_delete' res.pk %} " class="btn btn-primary">delete</a>
+        </div>
+      </div>
+      {%  endfor %}
+      {% else %}
+      <!-- if there are no reservations give the user an option to make a reservation -->
+      <div class="card text-center res-details">
+        <div class="card-body">
+          <h2 class="card-title p-4"> You have no current reservations</h2>
+          <a href="{% url 'reservation' %}" class="btn btn-primary">Make a reservation</a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
