@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'reservation',
     'members',
     'crispy_forms',
+    'menu',
+    'homepage',
     
 ]
 

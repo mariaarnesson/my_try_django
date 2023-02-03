@@ -27,8 +27,8 @@
       </div class="tel"> 
             <p class="card-text">Booking online or call:</p>
             <p class="card-text">Tel: 12345678</p>
-            <a type="button" class="btn btn-primary shadow  mt-5" href="{% url 'make_reservation' %}">Online Booking</a>
-            <a type="button" class="btn btn-primary shadow  mt-5" href="#">Our Menu</a>
+            <a type="button" class="btn btn-primary shadow  mt-5" href="{% url 'reservation' %}">Online Booking</a>
+            <a type="button" class="btn btn-primary shadow  mt-5" href="{% url 'menu' %}">Our Menu</a>
             
             <h2>Made with love</h2>
            
@@ -168,79 +168,4 @@
   
 </div>
 </section>
-{% endblock %}
-<body>
-      
-
-  <div class="menu">
-      <br>
-      <h1>Restaurant Menu</h1>
-      <br>
-      <div class="first">
-          
-          <h2>Main Dishes</h2>
-          <p>Cuisses de Grenouille_____________________________ 16.95 $</p>
-          <p>(frog's legs) </p>
-         
-          <p>Soupe de Poissons _______________________________ 16.95 $</p>
-          <p>Fish Soup</p>
-          
-          <p>Salade de Chèvre Chaud___________________________ 13.95 $</p>
-          <p>(Goat Cheese Salad)</p>
-          
-          <p>Tomates Farcies_________________________________ 14.95 $</p>
-          <p>(Stuffed Tomatoes)</p>
-          
-          <p>Gigot d'Agneau__________________________________ 15.95 $</p>
-          <p>(Roasted Leg of Lamb)</p>
-         
-          <p>Poulet Basquaise ________________________________ 14.95 $</p>
-          <p>(Basque Chicken Stew)</p>
-          <img src="/assets/images/2022-12-30 (8).png">
-      </div>
-      
-      <div class="second">
-          <h2>Drinks</h2>
-          <p>Orange Juice ________________________________ 2.25 $</p>
-          <p>Apple Juice __________________________________ 2.25 $</p>
-          <p>Herbal Tea  __________________________________ 2.50 $</p>
-          <p>Heineken Beer________________________________ 4.50 $</p>
-          <p>Red Wine __________________________________ 39.95 $</p>
-          <p>(battle)</p>
-          <p>White Wine ________________________________ 39.95 $</p>
-          <p>(battle)</p>
-          <p>Margarita _________________________________ 12.95 $</p>
-          <p>(cocktail)</p>
-
-
-
-          
-          
-      </div>
-      <div class="third">
-          <h2>Desserts</h2>
-          <p>Croissants_____________________________________ 7.99 $</p>
-          
-
-          <p>Crème brûlée____________________________________ 7.95 $</p>
-      
-
-          <p>Macarons______________________________________ 8.95 $</p>
-         
-         
-
-      </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
 {% endblock %}
