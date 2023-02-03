@@ -21,11 +21,12 @@
         <div class="col-12 col-md-8">
             <div class="contact-form">
                 <div class="section-heading">
-                    <h2>Get In Touch</h2>
+                    <h2>Get In Touch - {{ message_name }}</h2>
                     <div class="line"></div>
                 </div>
                 <!-- Form -->
-                <form action="#" method="post">
+                <form action="{% url 'contact' %}" method="post">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="col-lg-6">
                             <input type="text" name="message-name" class="form-control mb-30" placeholder="Your Name">
